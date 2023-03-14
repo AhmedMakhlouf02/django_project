@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Django Project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style> 
+    </head>
+    <body>
+        <h1>Hellow Django</h1>
+        name : {{name|capfirst}} <br>
+        age : {{age|filesizeformat}}
+
+        <p>
+        <img src="{% static 'images/Noise.JPG' %}" alt="">
+        </p>
+        {% load static %}
+        <link rel='stylesheet' href="{% static 'css/style.css' %}">
+
+
+        {% if name == 'ali' %}
+        <p>Welcome Ali</p>
+        {% elif name == 'mohamed' %}
+        <p>Hellow Mohamed </p>
+        {% else %}
+        <p>Not Found</p>
+        {% endif %}
+
+        {% for x in name %}
+            <p>{{x}}</p>
+        {% endfor %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+{% endblock content %}
